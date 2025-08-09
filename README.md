@@ -74,7 +74,7 @@ Integration – Perform SCTransform normalization and reciprocal PCA integration
 
 Clustering & annotation – Identify clusters and annotate cell types using known marker genes and reference atlases.
 
-Visualization – Generate UMAP/t-SNE plots, heatmaps, violin plots, and dot plots.
+Visualization – Generate UMAP plots, heatmaps, violin plots, and dot plots.
 
 Spatial mapping – Infer spatial cell type enrichment using AUCell.
 
