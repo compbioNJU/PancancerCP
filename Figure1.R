@@ -34,17 +34,6 @@ mycols <- unique(c(tableau_color_pal("Jewel Bright")(9),
 setwd("~/works/metastasis")
 seuratObj <- readRDS('metastasis.final.rds')
 
-# seuratObj@meta.data <- seuratObj@meta.data %>% mutate(
-#   major_cluster=as.character(major_cluster),
-#   primary_cluster=as.character(primary_cluster),
-#   subtype=as.character(subtype)) %>% mutate(
-#     major_cluster=ifelse(major_cluster=="Kupffer", "Macrophage", major_cluster),
-#     primary_cluster=ifelse(primary_cluster=="Kupffer", "Macrophage", primary_cluster),
-#     subtype=ifelse(subtype=="Kupffer_VSIG4", "Mac_VSIG4", subtype),
-#     subtype=ifelse(subtype=="Kupffer_CCL18", "Mac_CCL18", subtype),
-#     subtype=ifelse(subtype=="Epi_MMP7", "Endocrine_MMP7", subtype)
-#   ) %>% droplevels()
-
 refGenes <- seuratObj@misc$geneName
 
 cellmeta <- seuratObj@meta.data %>% 
@@ -300,9 +289,6 @@ print(as_ggplot(get_legend(p8)))
 dev.off()
 rm(p1,p2,p3,p4,p5,p6,p7,p8,p9)
 
-
-# cols <- setNames(mycols[1:nlevels(seuratObj$subtype)], levels(seuratObj$subtype))
-
 pdf(paste0(fig_dir, "Fig1.UMAP-subtype.pdf"), height=8.27, width=8.27)
 p <- DimPlot(seuratObj, group.by = 'subtype', raster = F,
              cols = xcol, pt.size = 0.1, order = T) + NoAxes() 
@@ -518,17 +504,6 @@ print(p6)
 dev.off()
 rm(p0,p1,p2,p3,p4,p5,p6)
 rm(js1,js2,js3,js4,cellstat0,cellstat1,cellstat2,cellstat3,cellstat4)
-
-
-######### hdWGCNA 
-seuratObj$tissueGroup <- sprintf("%s-%s",seuratObj$tissue,seuratObj$group)
-for(x in unique(seuratObj$tissueGroup)){
-  cells <- names(seuratObj$tissueGroup)[seuratObj$tissueGroup %in% x]
-  obj <- subset(seuratObj, cells = cells)
-  saveRDS(obj, sprintf("%s.seuratObj.rds", x))
-}
-rm(obj)
-
 
 
 ######### CellPhoneDB 
