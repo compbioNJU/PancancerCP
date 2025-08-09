@@ -1,13 +1,12 @@
 # PancancerCP
 R code for figures in the pan-cancer cellular programs paper
 
-1. Overview
+## Overview
 This repository contains R scripts and example data for processing, integration, visualization, and analysis of single-cell RNA-seq and spatial transcriptomic data.
 The workflow is based on Seurat and related R packages, and reproduces the main computational analyses and figures reported in our manuscript.
 
-2. Software dependencies
+## Software dependencies
 R ≥ 4.2.0
-
 R packages:
 Seurat (v4.2.0 or above)
 DoubletFinder (v2.0.3)
