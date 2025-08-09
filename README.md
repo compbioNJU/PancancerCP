@@ -60,6 +60,37 @@ Inference of cell–cell communication networks
 
 The workflow is modular, allowing users to run the full pipeline or specific modules independently.
 
+## Instructions for Use
+### Input data format
+Single-cell RNA-seq: Seurat object (.rds) with raw counts
+
+Spatial transcriptomics: 10X Genomics output directory with filtered_feature_bc_matrix and spatial folder
+### Main steps implemented
+Quality control – Filter cells based on gene count and mitochondrial content.
+
+Doublet removal – Detect and remove doublets using DoubletFinder.
+
+Integration – Perform SCTransform normalization and reciprocal PCA integration for batch correction.
+
+Clustering & annotation – Identify clusters and annotate cell types using known marker genes and reference atlases.
+
+Visualization – Generate UMAP/t-SNE plots, heatmaps, violin plots, and dot plots.
+
+Spatial mapping – Infer spatial cell type enrichment using AUCell.
+
+Pseudotime analysis – Reconstruct cell trajectories with Monocle2 and CytoTRACE.
+
+CNV estimation – Infer copy number variations using inferCNV.
+
+Gene set enrichment – Perform functional enrichment analysis using clusterProfiler.
+
+Cell–cell interaction analysis – Identify ligand–receptor interactions using CellPhoneDB.
+
+### Example output
+Publication-quality plots in .pdf and .png formats.
+
+Intermediate R objects for downstream analysis (.rds).
+
 ## Data Availability for Demo
 The demo dataset (pbmc_demo.rds) is included in the data/ folder.
 Full raw data used in the manuscript can be downloaded from public databases:
@@ -67,6 +98,9 @@ Full raw data used in the manuscript can be downloaded from public databases:
 GEO: GSE139829, GSE158803, GSE178318, GSE140312, GSE149614, GSE138709, GSE179994, GSE123902, GSE169246, GSE176078, GSE197177, GSE154778, GSE162708, GSE163558, GSE225857, GSE272362
 
 NGDC: OMIX001073
+
+## Repository Link
+GitHub repository: https://github.com/compbioNJU/PancancerCP
 
 ## Citation:
 In preparation
