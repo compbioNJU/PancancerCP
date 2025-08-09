@@ -46,8 +46,6 @@ None required; tested on standard laptops/desktops with ≥8 GB RAM (16 GB recom
 ## Code Functionality Description
 The provided R scripts implement a complete workflow for:
 
-Pre-processing and quality control of scRNA-seq data
-
 Integration of multiple datasets to remove batch effects
 
 Identification of cell types using clustering and marker gene analysis
