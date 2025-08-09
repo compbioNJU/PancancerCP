@@ -43,5 +43,32 @@ ggrepel (v0.9.3)
 Non-standard hardware
 None required; tested on standard laptops/desktops with ≥8 GB RAM (16 GB recommended for large datasets)
 
+## Code Functionality Description
+The provided R scripts implement a complete workflow for:
+
+Pre-processing and quality control of scRNA-seq data
+
+Integration of multiple datasets to remove batch effects
+
+Identification of cell types using clustering and marker gene analysis
+
+Visualization of cell populations in reduced dimensions
+
+Mapping scRNA-seq annotations to spatial transcriptomics data
+
+Functional analysis via pseudotime inference, CNV detection, enrichment analysis
+
+Inference of cell–cell communication networks
+
+The workflow is modular, allowing users to run the full pipeline or specific modules independently.
+
+## Data Availability for Demo
+The demo dataset (pbmc_demo.rds) is included in the data/ folder.
+Full raw data used in the manuscript can be downloaded from public databases:
+
+GEO: GSE139829, GSE158803, GSE178318, GSE140312, GSE149614, GSE138709, GSE179994, GSE123902, GSE169246, GSE176078, GSE197177, GSE154778, GSE162708, GSE163558, GSE225857, GSE272362
+
+NGDC: OMIX001073
+
 ## Citation:
 In preparation
