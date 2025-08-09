@@ -102,5 +102,8 @@ NGDC: OMIX001073
 ## Repository Link
 GitHub repository: https://github.com/compbioNJU/PancancerCP
 
+## License
+This code is released under the MIT License, an Open Source Initiative–approved license that permits reuse, modification, and distribution, provided that the original copyright and license notice are retained.
+
 ## Citation:
 In preparation
